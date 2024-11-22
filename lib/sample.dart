@@ -1,2 +1,2 @@
-class sample
+class Sample {}
 
