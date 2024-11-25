@@ -3,6 +3,7 @@ import 'package:silvermarket/pages/category_page/categogry_page.dart';
 import 'package:silvermarket/pages/main_page/widget/phone_number_input.dart';
 import 'package:silvermarket/pages/main_page/widget/enter_button.dart';
 
+
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
