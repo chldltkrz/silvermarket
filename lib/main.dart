@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:silvermarket/pages/main_page/main_page.dart';
+import 'pages/category_page/category_page.dart';  // 정확한 경로로 import
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Silver Market App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+      home: CategoryPage(),  // CategoryPage 사용
     );
   }
 }
