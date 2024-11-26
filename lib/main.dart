@@ -5,13 +5,10 @@ import 'package:silvermarket/controller/item_controller.dart';
 import 'package:silvermarket/pages/main_page/main_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     Get.put(ItemController(), permanent: true);
@@ -19,10 +16,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'InnoWave Silver Market',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+      home: CategoryPage(),  // CategoryPage 사용
     );
   }
 }
