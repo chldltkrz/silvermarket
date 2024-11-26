@@ -1,23 +1,8 @@
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(CategogryPage());
-}
-
-class CategogryPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-   return Scaffold(
-      appBar: AppBar(
-        title: Text('Category Page'),
-      ),
-      body: Center(
-        child: Text('This is the Category Page!'),
-      ),
-    );
-  }
-}
-
+import 'package:get/get.dart';
+import 'package:silvermarket/pages/item_cart_page/item_cart_page.dart';
+import 'package:silvermarket/pages/item_list_page/item_list_page.dart';
+import 'package:silvermarket/pages/main_page/main_page.dart';
 
 class CategoryPage extends StatelessWidget {
   final List<String> categories = [
@@ -39,7 +24,7 @@ class CategoryPage extends StatelessWidget {
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             // 뒤로 가기 동작
-            print("뒤로 가기");
+            Get.offAll(() => MainPage());
           },
         ),
       ),
@@ -72,7 +57,8 @@ class CategoryPage extends StatelessWidget {
                 return GestureDetector(
                   onTap: () {
                     // 카테고리 클릭 시 동작
-                    print('${categories[index]} 클릭됨');
+                    Get.to(() => ItemListPage(),
+                        arguments: {'category': categories[index]});
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -114,7 +100,7 @@ class CategoryPage extends StatelessWidget {
               TextButton.icon(
                 onPressed: () {
                   // 첫 화면으로 이동
-                  print('첫 화면으로 이동');
+                  Get.offAll(() => MainPage());
                 },
                 icon: Icon(Icons.home, color: Colors.black),
                 label: Text(
@@ -125,7 +111,7 @@ class CategoryPage extends StatelessWidget {
               TextButton.icon(
                 onPressed: () {
                   // 장바구니로 이동
-                  print('장바구니로 이동');
+                  Get.offAll(() => ItemCartPage());
                 },
                 icon: Icon(Icons.shopping_cart, color: Colors.black),
                 label: Text(

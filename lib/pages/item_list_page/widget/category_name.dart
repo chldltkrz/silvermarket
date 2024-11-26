@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CategoryName extends StatelessWidget {
-  const CategoryName({super.key});
+  String category;
+  CategoryName({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class CategoryName extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            '카테고리 이름',
+            category,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -18,7 +19,7 @@ class CategoryName extends StatelessWidget {
           ),
           SizedBox(height: 8),
           Text(
-            '카테고리나 제공하는 제품 및 서비스에 대해',
+            category + '에 대한 상품 목록입니다.',
             style: TextStyle(
               fontSize: 12,
               color: Colors.grey,

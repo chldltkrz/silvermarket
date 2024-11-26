@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:silvermarket/pages/category_page/categogry_page.dart';
 import 'package:silvermarket/pages/main_page/widget/phone_number_input.dart';
 import 'package:silvermarket/pages/main_page/widget/enter_button.dart';
-
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -101,12 +101,7 @@ class MainPage extends StatelessWidget {
 
                   // 가입하기 버튼 (별도 파일에서 가져옴)
                   EnterButton(onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const CategoryPage(),
-                      ),
-                    );
+                    Get.to(() => CategoryPage());
                   }),
                 ],
               ),

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:silvermarket/controller/item_controller.dart';
 import 'package:silvermarket/pages/common/appbar.dart';
 import 'package:silvermarket/pages/item_list_page/widget/category_name.dart';
 import 'package:silvermarket/pages/item_list_page/widget/item.dart';
+import 'package:silvermarket/pages/item_regi_page/item_regi_page.dart';
 
 class ItemListPage extends StatelessWidget {
-  const ItemListPage({super.key});
-
+  ItemListPage({super.key});
+  final args = Get.arguments;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,13 +19,20 @@ class ItemListPage extends StatelessWidget {
           Column(
             children: [
               // Category Name Section
-              CategoryName(),
+              CategoryName(category: args['category']),
               // List of Items Section
               Expanded(
-                child: ListView.builder(
-                  itemCount: 5, // Example item count
-                  itemBuilder: (context, index) {
-                    return Item();
+                child: GetBuilder<ItemController>(
+                  builder: (controller) {
+                    return ListView(
+                      children: List.generate(
+                        Get.find<ItemController>().getItems().length,
+                        (index) => Item(
+                            item: Get.find<ItemController>()
+                                .getItems()
+                                .elementAt(index)),
+                      ),
+                    );
                   },
                 ),
               ),
@@ -37,7 +47,7 @@ class ItemListPage extends StatelessWidget {
               height: 70, // Increase button size
               child: FloatingActionButton(
                 onPressed: () {
-                  // Add your action here
+                  Get.to(ItemRegiPage());
                 },
                 backgroundColor: Colors.white, // White background
                 elevation: 5, // Shadow for the button
