@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CategoryPage(),  // CategoryPage 사용
+      home: MainPage(), // CategoryPage 사용
     );
   }
 }

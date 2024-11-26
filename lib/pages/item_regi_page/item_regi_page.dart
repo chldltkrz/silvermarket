@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:silvermarket/pages/common/appbar.dart';
@@ -57,7 +56,7 @@ class _ItemRegiPageState extends State<ItemRegiPage> {
                   ),
           ),
           SizedBox(height: 50),
-          ItemDescription(),
+          ItemDescription(pickedImage: _pickedImage),
         ],
       ),
     );
