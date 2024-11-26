@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:silvermarket/classes/item_class.dart';
 
 class ItemController extends GetxController {
-  final List<ItemClass> items = [];
+  static final List<ItemClass> items = [];
 
   ItemClass? getItem(String name) {
     try {

@@ -1,8 +1,17 @@
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 import 'package:silvermarket/classes/item_class.dart';
 
 class CartController extends GetxController {
-  final Map<ItemClass, int> cartedItems = {};
+  var cartedItems = <ItemClass, int>{}.obs;
+
+  Map<ItemClass, int> getCartedItems() {
+    return cartedItems;
+  }
+
+  void deleteItem(ItemClass item) {
+    cartedItems.remove(item);
+    update();
+  }
 
   void addItem(ItemClass item) {
     if (cartedItems.containsKey(item)) {

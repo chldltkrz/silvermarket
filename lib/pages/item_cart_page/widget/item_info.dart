@@ -1,13 +1,29 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:silvermarket/classes/item_class.dart';
 
 class ItemInfo extends StatelessWidget {
-  const ItemInfo({super.key});
+  final ItemClass item;
+  final int quantity;
+  final void Function() onRemove;
+  final void Function() onAdd;
+  final void Function() onDelete;
+
+  ItemInfo({
+    super.key,
+    required this.item,
+    required this.quantity,
+    required this.onRemove,
+    required this.onAdd,
+    required this.onDelete,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
+        // Item Image or Placeholder
         Container(
           width: 80,
           height: 80,
@@ -16,24 +32,26 @@ class ItemInfo extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
+        // Item Details
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '소독제',
+                item.name,
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 15),
               Text(
-                '10,000원',
+                NumberFormat('#,###').format((item.price * quantity)) + '원',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ],
           ),
         ),
         Spacer(),
+        // Quantity Controls
         Container(
           decoration: BoxDecoration(
             color: Colors.white, // White background
@@ -43,28 +61,43 @@ class ItemInfo extends StatelessWidget {
           child: Row(
             children: [
               IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.remove_circle_outline),
+                onPressed:
+                    quantity > 0 ? onRemove : null, // Disable if quantity is 0
+                icon: Icon(
+                  Icons.remove_circle_outline,
+                  color: quantity > 0
+                      ? Colors.black
+                      : Colors.grey, // Greyed out if disabled
+                ),
               ),
               Text(
-                '0',
+                '$quantity', // Display the current quantity
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.add_circle_outline),
+                onPressed: onAdd, // Call onAdd to increase quantity
+                icon: Icon(
+                  Icons.add_circle_outline,
+                  color: Colors.black,
+                ),
               ),
             ],
           ),
         ),
+        // Remove Item Button
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            onDelete(); // Call onDelete to remove the item
+          },
           child: Container(
             padding: const EdgeInsets.only(left: 10),
-            child: Icon(CupertinoIcons.trash),
+            child: Icon(
+              CupertinoIcons.trash,
+              color: Colors.red,
+            ),
           ),
         ),
       ],
