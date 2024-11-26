@@ -1,8 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:silvermarket/classes/item_class.dart';
+import 'package:silvermarket/pages/item_info_page/item_info_page.dart';
 
 class Item extends StatelessWidget {
   final ItemClass item;
@@ -60,7 +61,9 @@ class Item extends StatelessWidget {
                     ),
                     Spacer(),
                     ElevatedButton(
-                      onPressed: () => {},
+                      onPressed: () => {
+                        Get.to(ItemInfoPage(item: item)),
+                      },
                       child: Text("선택"),
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(

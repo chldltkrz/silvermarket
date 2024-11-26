@@ -47,7 +47,7 @@ class ItemListPage extends StatelessWidget {
               height: 70, // Increase button size
               child: FloatingActionButton(
                 onPressed: () {
-                  Get.to(ItemRegiPage());
+                  Get.to(() => ItemRegiPage());
                 },
                 backgroundColor: Colors.white, // White background
                 elevation: 5, // Shadow for the button
