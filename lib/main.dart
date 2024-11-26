@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'pages/category_page/category_page.dart';  // 정확한 경로로 import
+import 'package:get/get.dart';
+import 'package:silvermarket/controller/cart_controller.dart';
+import 'package:silvermarket/controller/item_controller.dart';
+import 'package:silvermarket/pages/main_page/main_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,9 +11,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Silver Market App',
+    Get.put(ItemController(), permanent: true);
+    Get.put(CartController(), permanent: true);
+    return GetMaterialApp(
+      title: 'InnoWave Silver Market',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
