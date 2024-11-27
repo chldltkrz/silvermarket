@@ -13,17 +13,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFD9DDE7),
       toolbarHeight: 80,
       leading: IconButton(
-        icon: Icon(Icons.arrow_back, color: Colors.black),
+        icon: Icon(Icons.arrow_back, color: Color(0xFF182233)),
         onPressed: onBackPressed ?? () => Navigator.pop(context),
       ),
       centerTitle: false,
       title: Text(
         title,
         style: TextStyle(
-          color: Colors.black,
+          color: Color(0xFF182233),
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),

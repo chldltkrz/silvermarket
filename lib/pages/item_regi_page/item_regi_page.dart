@@ -30,6 +30,7 @@ class _ItemRegiPageState extends State<ItemRegiPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: '상품 등록 페이지'),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           GestureDetector(
@@ -39,13 +40,13 @@ class _ItemRegiPageState extends State<ItemRegiPage> {
                     width: double.infinity,
                     height: 400,
                     decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF182233),
+                      //borderRadius: BorderRadius.circular(10),
                     ),
                     child: Icon(
                       Icons.add_a_photo,
                       size: 50,
-                      color: Colors.grey[700],
+                      color: Colors.white,
                     ),
                   )
                 : Image.file(

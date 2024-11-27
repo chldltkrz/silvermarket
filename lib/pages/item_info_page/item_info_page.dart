@@ -19,6 +19,7 @@ class ItemInfoPage extends StatelessWidget {
 
     return Scaffold(
       appBar: CustomAppBar(title: '상품 상세 페이지'),
+      backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -72,7 +73,7 @@ class ItemInfoPage extends StatelessWidget {
                           }
                         : null, // Disable button if count is 0
                     icon: Icon(Icons.remove_circle_outline),
-                    color: itemCount > 0 ? Colors.black : Colors.grey,
+                    color: itemCount > 0 ? Color(0xFF182233) : Colors.grey,
                   );
                 }),
 
@@ -94,7 +95,7 @@ class ItemInfoPage extends StatelessWidget {
                     cartController.addItem(item);
                   },
                   icon: Icon(Icons.add_circle_outline),
-                  color: Colors.black,
+                  color: Color(0xFF182233),
                 ),
                 Text(
                   "총 가격",

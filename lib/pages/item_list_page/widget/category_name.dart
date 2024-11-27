@@ -22,7 +22,7 @@ class CategoryName extends StatelessWidget {
             category + '에 대한 상품 목록입니다.',
             style: TextStyle(
               fontSize: 12,
-              color: Colors.grey,
+              color: Color(0xFF182233),
             ),
           ),
         ],

@@ -9,7 +9,7 @@ class PhoneNumberInput extends StatelessWidget {
       width: double.infinity,
       height: 50,
       decoration: BoxDecoration(
-        color: Colors.black, // 기존 검정색 배경 유지
+        color: Color(0xFF182233),
         borderRadius: BorderRadius.circular(15),
       ),
       child: Padding(
@@ -26,9 +26,9 @@ class PhoneNumberInput extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: '전화번호를 입력하세요',
                   hintStyle: TextStyle(
-                    color: Colors.white.withOpacity(0.6),
-                    fontSize: 14,
-                  ),
+                      color: Colors.white.withOpacity(0.6),
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
                   border: InputBorder.none, // 기본 테두리 제거
                 ),
               ),

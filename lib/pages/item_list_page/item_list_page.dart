@@ -13,6 +13,7 @@ class ItemListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: '상품 목록 페이지'),
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           // Main Content
@@ -56,7 +57,7 @@ class ItemListPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 28, // Larger font size
                     fontWeight: FontWeight.bold,
-                    color: Colors.black, // Black color for "="
+                    color: Color(0xFF182233), // Black color for "="
                   ),
                 ),
                 shape: CircleBorder(), // Ensures the button is perfectly round
