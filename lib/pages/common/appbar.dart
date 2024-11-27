@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -17,7 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: 80,
       leading: IconButton(
         icon: Icon(Icons.arrow_back, color: Color(0xFF182233)),
-        onPressed: onBackPressed ?? () => Navigator.pop(context),
+        onPressed: onBackPressed ?? () => Get.back(),
       ),
       centerTitle: false,
       title: Text(

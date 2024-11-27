@@ -57,12 +57,15 @@ class ItemCartPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final item = cartedItems.keys.toList()[index];
                     final quantity = cartedItems[item]!;
-                    return ItemInfo(
-                      item: item,
-                      quantity: quantity,
-                      onRemove: () => cartController.removeItem(item),
-                      onAdd: () => cartController.addItem(item),
-                      onDelete: () => cartController.deleteItem(item),
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: ItemInfo(
+                        item: item,
+                        quantity: quantity,
+                        onRemove: () => cartController.removeItem(item),
+                        onAdd: () => cartController.addItem(item),
+                        onDelete: () => cartController.deleteItem(item),
+                      ),
                     );
                   },
                 );

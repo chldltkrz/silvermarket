@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -28,9 +29,22 @@ class ItemInfo extends StatelessWidget {
           width: 80,
           height: 80,
           decoration: BoxDecoration(
-            color: Colors.grey,
+            color: Colors.grey[300], // Light grey background for placeholder
             borderRadius: BorderRadius.circular(10),
           ),
+          child: item.image != null
+              ? ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.file(
+                    File(item.image!.path), // Load the image from file
+                    fit: BoxFit.cover,
+                  ),
+                )
+              : Icon(
+                  Icons.image, // Placeholder icon
+                  color: Colors.grey[600],
+                  size: 40,
+                ),
         ),
         // Item Details
         Padding(
