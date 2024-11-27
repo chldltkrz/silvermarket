@@ -18,17 +18,17 @@ class CategoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Color(0xFFD9DDE7),
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: Color(0xFF182233)),
           onPressed: () {
             // 뒤로 가기 동작
             Get.offAll(() => MainPage());
           },
         ),
       ),
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Padding(
@@ -39,7 +39,7 @@ class CategoryPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: Color(0xFF182233),
                 ),
               ),
             ),
@@ -64,6 +64,11 @@ class CategoryPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12.0),
+                      border: Border.all(
+                        // 테두리 추가
+                        color: Color(0xFF116ACC), // 테두리 색상
+                        width: 0.5, // 테두리 두께
+                      ),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black26,
@@ -79,7 +84,7 @@ class CategoryPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.w600,
-                          color: Colors.black,
+                          color: Color(0xFF116ACC),
                         ),
                       ),
                     ),
@@ -91,7 +96,7 @@ class CategoryPage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
+        color: Color(0xFFD9DDE7),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
           child: Row(
@@ -102,10 +107,10 @@ class CategoryPage extends StatelessWidget {
                   // 첫 화면으로 이동
                   Get.offAll(() => MainPage());
                 },
-                icon: Icon(Icons.home, color: Colors.black),
+                icon: Icon(Icons.home, color: Color(0xFF182233)),
                 label: Text(
                   '첫 화면',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Color(0xFF182233)),
                 ),
               ),
               TextButton.icon(
@@ -113,12 +118,9 @@ class CategoryPage extends StatelessWidget {
                   // 장바구니로 이동
                   Get.offAll(() => ItemCartPage());
                 },
-                icon: Icon(Icons.shopping_cart, color: Colors.black),
-                label: Text(
-                  '장바구니',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
+                icon: Icon(Icons.shopping_cart, color: Color(0xFF182233)),
+                label: Text('장바구니', style: TextStyle(color: Color(0xFF182233))),
+              )
             ],
           ),
         ),

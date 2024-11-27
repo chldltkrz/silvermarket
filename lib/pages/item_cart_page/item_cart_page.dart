@@ -19,6 +19,7 @@ class ItemCartPage extends StatelessWidget {
 
     return Scaffold(
       appBar: CustomAppBar(title: '장바구니'),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.only(
           top: 20,
@@ -30,7 +31,10 @@ class ItemCartPage extends StatelessWidget {
           children: [
             Text(
               'Order',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF182233)),
             ),
             SizedBox(height: 20),
 
@@ -93,8 +97,7 @@ class ItemCartPage extends StatelessWidget {
                         builder: (context) {
                           return CupertinoAlertDialog(
                             title: Text('결제알림'),
-                            content: Text(
-                                '총 금액은 ${NumberFormat('#,###').format(
+                            content: Text('총 금액은 ${NumberFormat('#,###').format(
                               totalPrice,
                             )} 원이 결제 됩니다'),
                             actions: [
@@ -111,7 +114,7 @@ class ItemCartPage extends StatelessWidget {
                       ),
                     }, // Add purchase logic
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
+                      backgroundColor: Color(0xFF182233),
                     ),
                     child: Text(
                       '구매하기',

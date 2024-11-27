@@ -27,7 +27,10 @@ class _ItemDescriptionState extends State<ItemDescription> {
           Row(
             children: [
               Text('상품 이름',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF182233))),
               SizedBox(width: 10),
               Expanded(
                 child: TextField(
@@ -44,7 +47,10 @@ class _ItemDescriptionState extends State<ItemDescription> {
           Row(
             children: [
               Text('상품 가격',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF182233))),
               SizedBox(width: 10),
               Expanded(
                 child: TextField(
@@ -62,8 +68,14 @@ class _ItemDescriptionState extends State<ItemDescription> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('상품 설명',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              Text(
+                '상품 설명',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF182233),
+                ),
+              ),
               TextField(
                 controller: descriptionController,
                 maxLines: 3,
@@ -107,11 +119,12 @@ class _ItemDescriptionState extends State<ItemDescription> {
                 }
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
+                backgroundColor: Color(0xFF182233),
               ),
               child: Text(
                 '등록하기',
                 style: TextStyle(
+                  fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),

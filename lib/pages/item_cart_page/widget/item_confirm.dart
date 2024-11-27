@@ -40,7 +40,7 @@ class ItemConfirm extends StatelessWidget {
     final int finalPrice = totalPrice + deliveryFee - discount;
 
     return Container(
-      color: Colors.white,
+      color: Color(0xFFD9DDE7),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

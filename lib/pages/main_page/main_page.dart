@@ -10,7 +10,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[200],
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
@@ -57,14 +57,14 @@ class MainPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start, // 위쪽부터 정렬
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 8),
+                  SizedBox(height: 10),
                   // 큰 텍스트
                   Text(
                     'SILVER MARKET',
                     style: TextStyle(
                       fontSize: 45,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Color(0xFF1F2937),
                       // letterSpacing: 3.0,  글자 간격 설정
                       // fontFamily: 'Roboto', 폰트 종류 변경
                     ),
@@ -76,28 +76,28 @@ class MainPage extends StatelessWidget {
                     '쾌적한 시니어 라이프를 위한 모든 것',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white,
+                      color: Color(0xFF1F2937),
                     ),
                   ),
 
-                  SizedBox(height: 35),
+                  SizedBox(height: 45),
 
                   Text(
                     '전화번호/카카오톡/네이버 아이디로\n간편하게 회원가입하세요',
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.white,
+                      color: Color(0xFF116ACC),
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
                   ),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
 
                   // 전화번호 입력 버튼 (별도 파일에서 가져옴)
                   PhoneNumberInput(),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
 
                   // 가입하기 버튼 (별도 파일에서 가져옴)
                   EnterButton(onPressed: () {

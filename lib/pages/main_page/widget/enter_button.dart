@@ -8,7 +8,7 @@ class EnterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.black,
+      color: Color(0xFF182233),
       borderRadius: BorderRadius.circular(30),
       elevation: 5, // ElevatedButton과 유사한 그림자 효과
       child: InkWell(
